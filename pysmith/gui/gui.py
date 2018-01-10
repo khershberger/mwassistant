@@ -39,8 +39,6 @@ from qtconsole.rich_jupyter_widget import RichJupyterWidget
 from qtconsole.inprocess import QtInProcessKernelManager
 from IPython.lib import guisupport
 
-import tables
-
 import pysmith.sparam.sparam
 
 __version__ = '0.1.0'
