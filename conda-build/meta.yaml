@@ -1,0 +1,34 @@
+package:
+  name: pysmith
+  version: "0.1.0"
+
+source:
+  # git_tag: 0.1.0
+  # git_url: https://github.com/khershberger/pysmith.git
+  path: ../.
+  
+build:
+  number: 12
+  string: {{ "py" ~ CONDA_PY ~ "_" ~ PKG_BUILDNUM }}
+  noarch: python
+
+#app:
+#  entry: python -m pysmith
+
+requirements:
+  build:
+    - python =3.4.5
+    - setuptools
+
+  run:
+    - python
+    - matplotlib >=2.1
+    - numpy >=1.13
+    - pyqt >=5.6
+    - qtconsole >=4.3.0
+    - scikit-rf >=0.14.5
+
+about:
+  home: https://github.com/khershberger/pysmith
+  license: GPL
+  summary: Tools for visualizing and manipulating S-Parameters 

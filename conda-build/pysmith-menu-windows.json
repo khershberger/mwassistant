@@ -1,0 +1,13 @@
+{
+    "menu_name": "PySmith",
+    "menu_items":
+        [
+            {
+                "pywscript": "${PYTHON_SCRIPTS}/pysmith-app.py",
+                "name": "PySmith",
+                "workdir": "${PREFIX}",
+                "desktop": true,
+                "quicklaunch": false
+            }
+        ]
+}
