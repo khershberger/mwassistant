@@ -1,19 +1,19 @@
 package:
-  name: pysmith
+  name: mwassistant
   version: "0.1.0"
 
 source:
   # git_tag: 0.1.0
-  # git_url: https://github.com/khershberger/pysmith.git
+  # git_url: https://github.com/khershberger/mwassistant.git
   path: ../.
   
 build:
-  number: 12
+  number: 4
   string: {{ "py" ~ CONDA_PY ~ "_" ~ PKG_BUILDNUM }}
   noarch: python
 
 #app:
-#  entry: python -m pysmith
+#  entry: python -m mwassist-app
 
 requirements:
   build:
@@ -29,6 +29,6 @@ requirements:
     - scikit-rf >=0.14.5
 
 about:
-  home: https://github.com/khershberger/pysmith
+  home: https://github.com/khershberger/mwassistant
   license: GPL
   summary: Tools for visualizing and manipulating S-Parameters 

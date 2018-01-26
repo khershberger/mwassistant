@@ -1,10 +1,10 @@
 {
-    "menu_name": "PySmith",
+    "menu_name": "Microwave Assistant",
     "menu_items":
         [
             {
-                "pywscript": "${PYTHON_SCRIPTS}/pysmith-app.py",
-                "name": "PySmith",
+                "pywscript": "${PYTHON_SCRIPTS}/mwassist-app.py",
+                "name": "Microwave Assistant",
                 "workdir": "${PREFIX}",
                 "desktop": true,
                 "quicklaunch": false
