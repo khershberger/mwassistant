@@ -1,5 +1,5 @@
 import sys, os
-from pysmith.gui import gui
+from mwassist.gui import gui
 
 if __name__ == '__main__':
     # Following code is to prevent pythonw.exe from silently exiting

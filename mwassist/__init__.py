@@ -1,2 +1,2 @@
-from pysmith import gui
-from pysmith import sparam
+from mwassist import gui
+from mwassist import sparam

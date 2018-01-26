@@ -39,9 +39,9 @@ from qtconsole.rich_jupyter_widget import RichJupyterWidget
 from qtconsole.inprocess import QtInProcessKernelManager
 from IPython.lib import guisupport
 
-import pysmith.sparam.sparam
+import mwassist.sparam.sparam
 
-__version__ = '0.1.0'
+__version__ = '0.2.0'
 
 class loggingAdapter(logging.Handler):
     def __init__(self, parent, widget):
@@ -101,7 +101,7 @@ class ConsoleWidget(RichJupyterWidget):
         self._execute(command, False)
 
 
-class PysmithMainWindow(QMainWindow):
+class MDAMainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
 
@@ -145,7 +145,7 @@ class PysmithMainWindow(QMainWindow):
         
         # Create textEdit linked to Jupyter widget
         logging.info('Creating sparam widget')
-        self.sparamDock = pysmith.sparam.sparam.sparamPlot()
+        self.sparamDock = mwassist.sparam.sparam.sparamPlot()
         bar.addMenu(self.sparamDock.menuOptionsCreate())
                 
         # Create the docs
@@ -182,7 +182,7 @@ class PysmithMainWindow(QMainWindow):
         # Set mainWidget to be central widget
         self.setCentralWidget(mainWidget)
         self.setGeometry(150, 150, 1400, 1000)
-        self.setWindowTitle('PySmith')
+        self.setWindowTitle('Microwave Assistant')
         self.show()
 
     def processTrigger(self, q):
@@ -223,10 +223,10 @@ class dialogAbout(QMessageBox):
         from PyQt5.Qt import PYQT_VERSION_STR
 
         versionPython     = sys.version
-        versionPySmith    = __version__
+        versionMDA   = __version__
         
         versionDetails = '\n'.join([
-                'PySmith version {:s}'.format(versionPySmith),
+                'Microwave Assistant version {:s}'.format(versionMDA),
                 'Python version: {:s}'.format(versionPython),
                 'Qt version: {:s}'.format(QT_VERSION_STR),
                 'PyQt version: {:s}'.format(PYQT_VERSION_STR),
@@ -234,8 +234,8 @@ class dialogAbout(QMessageBox):
                 'numpy version: {:s}'.format(versionNumpy)
                 ])
 
-        self.setWindowTitle('About PySmith')
-        self.setText('               PySmith version {:s}               '.format(versionPySmith))
+        self.setWindowTitle('About Microwave Assistant')
+        self.setText('               Microwave Assistant version {:s}               '.format(versionMDA))
         self.setDetailedText(versionDetails)
         
         self.show()
@@ -243,7 +243,7 @@ class dialogAbout(QMessageBox):
 
 def main():
     app = QApplication(sys.argv)
-    guiMain = PysmithMainWindow()
+    guiMain = MDAMainWindow()
     try:
         retval = app.exec_()
     except:     # This doesn't seem to actually work.
